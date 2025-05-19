@@ -14,7 +14,7 @@ shim:
 
 containers:
   - name: "dia"
-    image: "ghcr.io/devnen/dia-tts-server"
+    image: "ghcr.io/tinfoilsh/dia-tts-server:sha-d754923"
     args:
       - "-v /mnt/ramdisk/model_cache:/app/model_cache"
       - "-v /mnt/ramdisk/reference_audio:/app/reference_audio"
