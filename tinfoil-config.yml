@@ -1,4 +1,4 @@
-cvm-version: 0.0.32
+cvm-version: 0.0.33
 ovmf-version: 0.0.2
 cpus: 8
 memory: 40960
@@ -15,3 +15,10 @@ shim:
 containers:
   - name: "dia"
     image: "ghcr.io/devnen/dia-tts-server"
+    args:
+      - "-v /mnt/ramdisk/model_cache:/app/model_cache"
+      - "-v /mnt/ramdisk/reference_audio:/app/reference_audio"
+      - "-v /mnt/ramdisk/outputs:/app/outputs"
+      - "-v /mnt/ramdisk/voices:/app/voices"
+      - "--env HF_HUB_ENABLE_HF_TRANSFER=1"
+      - "--gpus all"
